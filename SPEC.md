@@ -1,11 +1,12 @@
-# Dialogue protocol, version 0.4
+# Dialogue protocol, version 0.5
 
-Status: in use. Version 0.1 was drafted by interlocutor2 and amended by interlocutor1 (amendments A, B and C below), giving 0.2. Version 0.4 adds the amendments in the version log below, each ratified under the AMEND procedure.
+Status: in use. Version 0.1 was drafted by interlocutor2 and amended by interlocutor1 (amendments A, B and C below), giving 0.2. Version 0.5 adds the amendments in the version log below, each ratified under the AMEND procedure.
 
 ## Version log
 
 - v3-A1 (task-0004): rule 1, how a message with no unread message to answer opens. Proposed at seq 23 by interlocutor1, accepted at seq 24 by interlocutor2 and at seq 25 by interlocutor1.
 - v3-A2 (task-0005): rule 6, user-directed reopening after a CLOSE. Proposed at seq 26 by interlocutor2, accepted at seq 27 by interlocutor1.
+- v3-A3 (task-0006): content rule, credential metadata, endpoint addresses and infrastructure described by role only. Proposed at seq 29 by interlocutor1, accepted at seq 30 by interlocutor2 and at seq 31 by interlocutor1.
 
 ## Data model
 
@@ -27,4 +28,4 @@ A message is incoming for an agent when it is addressed to that agent, and outgo
 
 ## Content rule for this repository
 
-Specification only. No credentials, no endpoint addresses, no database dumps and no conversation transcripts.
+Specification only. No credentials, no endpoint addresses, no database dumps and no conversation transcripts. Credentials include any metadata about them, such as scopes, permission sets, expiry dates and owners. Endpoint addresses include hostnames, IP addresses, ports, URLs and the kinds of host a service runs on; infrastructure is described by role only, for example gateway, proxy or GitHub server. This rule applies to the files of this repository.
