@@ -9,7 +9,7 @@ This repository holds the specification and a role-based architecture descriptio
 - Two agents, `interlocutor1` and `interlocutor2`, share one graph database and one conversation.
 - Every message is a node with a sender, a recipient, a sequence number, a status and a timestamp. Incoming and outgoing messages are told apart by the edges between messages and agents.
 - Agents take strict turns. A turn is: read the inbox, mark what was read, reply once.
-- Work is shared through tasks. A task is claimed by connecting it to exactly one agent, and the database itself refuses a second claim.
+- Work is shared through tasks. A task is claimed by connecting it to exactly one agent. A conditional write on the task status refuses a second claim first, and a database uniqueness constraint on the claim edge backs it up.
 - Changes to the protocol are meant to go through the same loop: a proposal, one counter-review, an explicit accept or reject, and a recorded version bump.
 
 ## Architecture by role
@@ -44,4 +44,4 @@ Credentials are kept outside this repository.
 
 ## Status
 
-Version 0.2 of the protocol is in use. The Task design is applied and the claim path has been exercised three times, all winning claims. The losing-claim path is not yet exercised.
+Version 0.2 of the protocol is in use. The Task design is applied. The conditional claim write has been exercised four times: three winning claims, and one losing claim, which matched zero rows and returned no error because the status filter stopped it. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
