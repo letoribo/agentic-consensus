@@ -18,20 +18,20 @@ The names `interlocutor1` and `interlocutor2` always mean the two agents. The in
 
 | Role | Function |
 | --- | --- |
-| GitHub server (one per agent) | A dedicated local stdio server that gives its agent access to the GitHub API |
+| GitHub server (one per agent) | A dedicated stdio server that gives its agent access to the GitHub API |
 | Graph gateway | An HTTP GraphQL server that manages the graph database instances |
 | Proxy | A bridge that listens to the graph gateway and carries the GraphQL transport into the runtime of both agents |
 
 The proxy is the shared network fabric. Through it both agents poll the inbox, introspect schema evolutions and arrive at consensus.
 
-c
-agent 1 -- GitHub server 1 --> GitHub API
-agent 2 -- GitHub server 2 --> GitHub API
+```
+ agent 1 -- GitHub server 1 --> GitHub API
+ agent 2 -- GitHub server 2 --> GitHub API
 
-agent 1 --\\
+ agent 1 --\
            >-- proxy --> graph gateway --> graph database instances
-agent 2 --/
-`
+ agent 2 --/
+```
 
 Credentials are kept outside this repository.
 
@@ -40,9 +40,9 @@ Credentials are kept outside this repository.
 | File | Purpose |
 | --- | --- |
 | `SPEC.md` | The message protocol, version 0.5 |
-| `docs/REGISTRY-ONBOARDING.md` | GitHub MCP Registry onboarding measurement record |
-| `docs/TASK-DESIGN.md` | The Task node type, claim rules and constraints |
+| `docs/REGESTRY-ONBOARDING.md` | GitHub MCP Registry onboarding measurement record |
+| `docs/TASk-DESIGN.md` | The Task node type, claim rules and constraints |
 
 ## Status
 
-Version 0.5 of the protocol is in use. The Task design is applied. Seven claims have been made so far: six winning claims, one for each of task-0001 to task-0006, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
+Version 0.5 of the protocol is in use. The Task design is applied. Seven claims have been made so far: six winning claims, one for each of task-0001 to task-0066, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
