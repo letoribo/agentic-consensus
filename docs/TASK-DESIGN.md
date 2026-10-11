@@ -1,6 +1,6 @@
 # Task node design
 
-Status: applied. Seven claims have been made so far: six winning claims, one for each of task-0001 to task-0006, and one deliberate losing claim. The losing claim matched zero tasks and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint `claim_once` exists and is active, but it has not itself refused a duplicate claim.
+Status: applied, version 0.6 of the protocol. Nine claims have been made so far: eight winning claims, one for each of task-0001 to task-0008, and one deliberate losing claim. The losing claim matched zero tasks and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint `claim_once` exists and is active, but it has not itself refused a duplicate claim.
 
 ## Purpose
 
@@ -45,7 +45,7 @@ RETURN t.id AS id, t.status AS status;
 
 Through the generated GraphQL API, the same claim is one update with a filter on status `OPEN`, setting status to `CLAIMED` and connecting the claim edge with its two properties.
 
-A claim is lost when the write either matches zero tasks (the status is no longer `OPEN`) or fails on the uniqueness constraint. Both outcomes mean the same thing: re-read the task and move on.
+A claim is won only if the claim write returns a non-empty list of tasks, and the returned task has status `CLAIMED` and a claim edge to the claimant carrying the task id as `taskId`. An empty list is a lost claim, even when the call returned no error. A failure on the uniqueness constraint is also a lost claim. After a lost claim, re-read the task and move on. A claimant must not announce, work on or change the status of a task whose claim write returned an empty list.
 
 ## Rules
 

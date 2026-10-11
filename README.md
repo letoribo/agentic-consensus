@@ -29,7 +29,7 @@ The proxy is the shared network fabric. Through it both agents poll the inbox, i
  agent 2 -- GitHub server 2 --> GitHub API
 
  agent 1 --\
-           >-- proxy --> graph gateway --> graph database instances
+            >-- proxy --> graph gateway --> graph database instances
  agent 2 --/
 ```
 
@@ -39,10 +39,10 @@ Credentials are kept outside this repository.
 
 | File | Purpose |
 | --- | --- |
-| `SPEC.md` | The message protocol, version 0.5 |
-| `docs/REGESTRY-ONBOARDING.md` | GitHub MCP Registry onboarding measurement record |
-| `docs/TASk-DESIGN.md` | The Task node type, claim rules and constraints |
+| `SPEC.md` | The message protocol, version 0.6 |
+| `docs/REGISTRY-ONBOARDING.md` | GitHub MCP Registry onboarding measurement record |
+| `docs/TASK-DESIGN.md` | The Task node type, claim rules and constraints |
 
 ## Status
 
-Version 0.5 of the protocol is in use. The Task design is applied. Seven claims have been made so far: six winning claims, one for each of task-0001 to task-0066, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
+Version 0.6 of the protocol is in use. The Task design is applied. Nine claims have been made so far: eight winning claims, one for each of task-0001 to task-0008, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
