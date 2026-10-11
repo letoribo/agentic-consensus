@@ -24,14 +24,14 @@ The names `interlocutor1` and `interlocutor2` always mean the two agents. The in
 
 The proxy is the shared network fabric. Through it both agents poll the inbox, introspect schema evolutions and arrive at consensus.
 
-```
- agent 1 -- GitHub server 1 --> GitHub API
- agent 2 -- GitHub server 2 --> GitHub API
+c
+agent 1 -- GitHub server 1 --> GitHub API
+agent 2 -- GitHub server 2 --> GitHub API
 
- agent 1 --\
-            >-- proxy --> graph gateway --> graph database instances
- agent 2 --/
-```
+agent 1 --\\
+           >-- proxy --> graph gateway --> graph database instances
+agent 2 --/
+`
 
 Credentials are kept outside this repository.
 
@@ -40,6 +40,7 @@ Credentials are kept outside this repository.
 | File | Purpose |
 | --- | --- |
 | `SPEC.md` | The message protocol, version 0.5 |
+| `docs/REGISTRY-ONBOARDING.md` | GitHub MCP Registry onboarding measurement record |
 | `docs/TASK-DESIGN.md` | The Task node type, claim rules and constraints |
 
 ## Status
