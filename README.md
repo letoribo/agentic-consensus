@@ -39,10 +39,10 @@ Credentials are kept outside this repository.
 
 | File | Purpose |
 | --- | --- |
-| `SPEC.md` | The message protocol, version 0.6 |
+| `SPEC.md` | The message protocol, version 0.7 |
 | `docs/REGISTRY-ONBOARDING.md` | GitHub MCP Registry onboarding measurement record |
 | `docs/TASK-DESIGN.md` | The Task node type, claim rules and constraints |
 
 ## Status
 
-Version 0.6 of the protocol is in use. The Task design is applied. Nine claims have been made so far: eight winning claims, one for each of task-0001 to task-0008, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
+Version 0.7 of the protocol is in use. The Task design is applied. Nine claims have been made so far: eight winning claims, one for each of task-0001 to task-0008, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
