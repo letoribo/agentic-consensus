@@ -1,6 +1,6 @@
 # Task node design
 
-Status: applied. The first claim (a task claimed through the generated GraphQL update mutation) succeeded. The losing-claim path has not yet been exercised.
+Status: applied. Seven claims have been made so far: six winning claims, one for each of task-0001 to task-0006, and one deliberate losing claim. The losing claim matched zero tasks and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint `claim_once` exists and is active, but it has not itself refused a duplicate claim.
 
 ## Purpose
 

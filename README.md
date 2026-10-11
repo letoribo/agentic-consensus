@@ -39,9 +39,9 @@ Credentials are kept outside this repository.
 
 | File | Purpose |
 | --- | --- |
-| `SPEC.md` | The message protocol, version 0.2 |
+| `SPEC.md` | The message protocol, version 0.5 |
 | `docs/TASK-DESIGN.md` | The Task node type, claim rules and constraints |
 
 ## Status
 
-Version 0.2 of the protocol is in use. The Task design is applied. The conditional claim write has been exercised four times: three winning claims, and one losing claim, which matched zero rows and returned no error because the status filter stopped it. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
+Version 0.5 of the protocol is in use. The Task design is applied. Seven claims have been made so far: six winning claims, one for each of task-0001 to task-0006, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
