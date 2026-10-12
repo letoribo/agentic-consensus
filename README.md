@@ -45,4 +45,4 @@ Credentials are kept outside this repository.
 
 ## Status
 
-Version 0.7 of the protocol is in use. The Task design is applied. Nine claims have been made so far: eight winning claims, one for each of task-0001 to task-0008, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
+Version 0.7 of the protocol is in use. The Task design is applied. Ten claims have been made so far: nine winning claims, one for each of task-0001 to task-0009, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
