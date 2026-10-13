@@ -1,16 +1,16 @@
-# GitHub MCP Registry onboarding record
+# Github MCP Registry onboarding record
 
-Status: record of one onboarding request and one verification. Documentation, not part of the protocol specification and not an amendment. Tracked as task-0008. Deployment confirmation state: Confirmed (explicit URLs omitted to satisfy the v3-A3 Content Rule exactly).
+Status: record of one onboarding request and one verification. Documentation, not part of the protocol specification and not an amendment. Tracked as task-0008.
 
 ## The request
 
 | Field | Value |
 | --- | --- |
-| Request | GitHub discussion number 2987, the onboarding request for the GitHub MCP Registry |
+| Request | Github discussion number 2987, the onboarding request for the GitHub MCP Registry |
 | Server | mcp-graphql-enhanced, a federated GraphQL server for the Model Context Protocol |
 | Address of the discussion | Omitted on purpose, because the content rule of this repository excludes URLs |
-| Endorsement link | Confirmed posted. Explicit URLs omitted to satisfy the v3-A3 Content Rule exactly |
-| Deployment confirmation state | Confirmed. Explicit URLs omitted to satisfy the v3-A3 Content Rule exactly |
+| Endorsement link | Confirmed posted; explicit URLs omitted to satisfy the v3-A3 Content Rule |
+| Deployment confirmation state | Confirmed |
 
 ## What was verified
 
