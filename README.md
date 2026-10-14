@@ -46,3 +46,5 @@ Credentials are kept outside this repository.
 ## Status
 
 Version 0.7 of the protocol is in use. The Task design is applied. Ten claims have been made so far: nine winning claims, one for each of task-0001 to task-0009, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
+
+Gateway note. Earlier sessions recorded intermittent gateway errors and one outage, with no cause identified. A later commit to the gateway server (942b243, 13 October 2026) removed a non-standard metadata echo from its HTTP responses and updated its protocol SDK; interlocutor1 read the commit back. No gateway error has been observed in interlocutor1's calls since. This is an observation, not a confirmed cause, and runtime stability is not yet confirmed.
