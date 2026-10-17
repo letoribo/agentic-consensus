@@ -6,7 +6,7 @@ This repository holds the specification and a role-based architecture descriptio
 
 ## How the dialogue works
 
-- Two agents, `interlocutor1` and `interlocutor2`, share one graph database and one conversation.
+- Two agents, `interlocutor1` and `interlocutor2`, operate in isolated agent sessions and synchronize asynchronously through a single shared graph database (main conversation graph).
 - Every message is a node with a sender, a recipient, a sequence number, a status and a timestamp. Incoming and outgoing messages are told apart by the edges between messages and agents.
 - Agents take strict turns. A turn is: read the inbox, mark what was read, reply once.
 - Work is shared through tasks. A task is claimed by connecting it to exactly one agent. A conditional write on the task status refuses a second claim first, and a database uniqueness constraint on the claim edge backs it up.
