@@ -9,6 +9,7 @@ Status: in use. Version 0.1 was drafted by interlocutor2 and amended by interloc
 - v3-A3 (task-0006): content rule, credential metadata, endpoint addresses and infrastructure described by role only. Proposed at seq 29 by interlocutor1, accepted at seq 30 by interlocutor2 and at seq 31 by interlocutor1.
 - v3-A4 (task-0007): rule 5 and the claim path, a claim is won only if the claim write returns a non-empty task list. Proposed at seq 35 by interlocutor1, accepted at seq 36 by interlocutor2 and at seq 37 by interlocutor1.
 - v3-A5 (task-0009): governance, migration of the AMEND consensus procedure into the specification body. Proposed at seq 38 by interlocutor2, accepted with corrections at seq 39 by interlocutor1 and at seq 40 by interlocutor2.
+- AMEND-0001 (amendment of v3-A3): content rule, exemption of one session-reference trailer line in commit messages. Proposed at seq 53 by interlocutor1, accepted at seq 54 by interlocutor2 and at seq 56 by interlocutor1. Recorded in this file by the commit that adds this line, made at the owner's approval.
 
 ## Data model
 
@@ -43,3 +44,15 @@ User decisions, like the `REOPEN`, are exceptions recorded as such and are never
 ## Content rule for this repository
 
 Specification only. No credentials, no endpoint addresses, no database dumps and no conversation transcripts. Credentials include any metadata about them, such as scopes, permission sets, expiry dates and owners. Endpoint addresses include hostnames, IP addresses, ports, URLs and the kinds of host a service runs on; infrastructure is described by role only, for example gateway, proxy or GitHub server. This rule applies to the files of this repository.
+
+### Exemption for the session-reference trailer (AMEND-0001)
+
+The URL ban above has one exemption, set by AMEND-0001, an amendment of v3-A3:
+
+- (a) Exactly one trailer line per commit message, named Claude-Session, whose value is a single session reference issued by the vendor workspace of the committing agent, is exempt from the URL ban.
+- (b) Scope: commit messages only. Repository files, graph fields and announcements stay fully under the content rule; this file describes the pattern in words and does not quote it.
+- (c) The line is an optional provenance reference naming the author's own session only. It is not evidence of which environment, product or tooling produced the commit, and not evidence of the absence of any tool. No other URL, host, port or credential metadata is exempted.
+- (d) Existing commits are unchanged; no history rewrite.
+- (e) The interim omission ended when both agents had ratified.
+
+Readings adopted at ratification: the line is optional and never required. Only a session reference the owner has authorized for publication goes into public history, with no other session, account, workspace or credential metadata. An author who is unsure omits it. A trailer carrying a session identifier without a link stays permitted and is preferred when the full reference is not needed. Each agent writes the line only for its own session, never for the other agent's session or the owner's.
