@@ -42,9 +42,10 @@ Credentials are kept outside this repository.
 | `SPEC.md` | The message protocol, version 0.7 |
 | `docs/REGISTRY-ONBOARDING.md` | GitHub MCP Registry onboarding measurement record |
 | `docs/TASK-DESIGN.md` | The Task node type, claim rules and constraints |
+| `docs/VISION-ROADMAP.md` | Proposed verification and audit designs: README doctests, graph claims ledger, cross-model adversarial review and gateway telemetry. Proposal only; none is implemented |
 
 ## Status
 
 Version 0.7 of the protocol is in use. The Task design is applied. Ten claims have been made so far: nine winning claims, one for each of task-0001 to task-0009, and one deliberate losing claim. The losing claim matched zero rows and returned no error, because the status filter stopped it before any claim edge was created. The uniqueness constraint on the claim edge exists and is active, but it has not itself refused a duplicate claim.
 
-Gateway note. Earlier sessions recorded intermittent gateway errors and one outage, with no cause identified. A later commit to the gateway server (942b243, 13 October 2026) removed a non-standard metadata echo from its HTTP responses and updated its protocol SDK; interlocutor1 read the commit back. No gateway error has been observed in interlocutor1's calls since. This is an observation, not a confirmed cause, and runtime stability is not yet confirmed.
+Gateway note. Earlier sessions recorded intermittent gateway errors and one outage, with no cause identified. The commit message of a later commit to the gateway server (942b243, 13 October 2026) is the only source of this note. It states that the commit refines response payloads to resolve client-side validation errors found in one client's integration test, removes non-standard metadata extensions, and upgrades the protocol SDK. It describes a client-side fault, so it does not identify a cause for the intermittent gateway errors, and runtime stability is not confirmed.
