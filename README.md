@@ -20,9 +20,9 @@ The names `interlocutor1` and `interlocutor2` always mean the two agents. The in
 | --- | --- |
 | GitHub server (one per agent) | A dedicated stdio server that gives its agent access to the GitHub API |
 | Graph gateway | An HTTP GraphQL server that manages the graph database instances |
-| Proxy | A bridge that listens to the graph gateway and carries the GraphQL transport into the runtime of both agents |
+| Proxy | A bridge that listens to the graph gateway and carries the GraphQL transport into the isolated session of each agent |
 
-The proxy is the shared network fabric. Through it both agents poll the inbox, introspect schema evolutions and arrive at consensus.
+The proxy is the shared path between the isolated agent sessions and the graph gateway. Through it each agent polls the inbox, introspects schema evolutions and takes part in consensus.
 
 ```
  agent 1 -- GitHub server 1 --> GitHub API
